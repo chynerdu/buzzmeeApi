@@ -69,9 +69,13 @@
 // })
 
 const io = require('socket.io')();
+// io.set('transports', ['websocket']);
 console.log('starting new server')
 io.on('connection', socket => {
   console.log('socket id: ', socket.id)
+  setInterval(() => {
+    io.sockets.emit('intervalMessage', Date.now());
+  })
   // socket.on('message', function (data) {
   //     console.log('message ', data);
   //     // socket.join('chatMessageRoom')
@@ -90,4 +94,4 @@ io.on('connection', socket => {
 //   console.log(client.id)
 //   io.emit('this', { will: 'be received by everyone'});
 // });
-io.listen(3333);
+io.listen(process.env.PORT || 3337);
