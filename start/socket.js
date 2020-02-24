@@ -1,5 +1,6 @@
 'use strict'
 
+
 // /*
 // |--------------------------------------------------------------------------
 // | Websocket
@@ -68,7 +69,7 @@
 //   console.log(socket.id)
 // })
 var options = {
-  allowUpgrades: true,
+  allowUpgrades: false,
   transports: [ 'polling', 'websocket' ],
   pingTimeout: 9000,
   pingInterval: 3000,
@@ -76,7 +77,7 @@ var options = {
   httpCompression: true,
   origins: '*:*'
 };
-const io = require('socket.io')(options);
+const io = require('socket.io')({transports:'websocket', 'origins' : '*:*'});
 // io.set('transports', ['websocket']);
 console.log('starting new server')
 io.on('connection', socket => {
