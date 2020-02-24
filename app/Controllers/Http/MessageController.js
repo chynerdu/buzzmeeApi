@@ -1,6 +1,6 @@
 'use strict'
 const Message = use('App/Models/Message')
-const User = use('App/Models/user')
+const User = use('App/Models/User')
 const { sendBroadcast } = use("App/HelperFunctions/Socket.Utils")
 const Database = use('Database')
 
