@@ -67,8 +67,16 @@
 // io.on('connection', function (socket) {
 //   console.log(socket.id)
 // })
-
-const io = require('socket.io')();
+var options = {
+  allowUpgrades: true,
+  transports: [ 'polling', 'websocket' ],
+  pingTimeout: 9000,
+  pingInterval: 3000,
+  cookie: 'mycookie',
+  httpCompression: true,
+  origins: '*:*'
+};
+const io = require('socket.io')(options);
 // io.set('transports', ['websocket']);
 console.log('starting new server')
 io.on('connection', socket => {

@@ -30,14 +30,14 @@
     "adonis-websocket": "^1.0.4",
     "mysql": "^2.18.1",
     "socket.io": "^2.3.0",
+    "socketio-sticky-session": "^0.4.3",
     "url-parse": "^1.4.7"
   },
   "devDependencies": {},
   "autoload": {
     "App": "./app"
   },
-
   "engines": {
     "node": "8.5.0"
-}
+  }
 }
