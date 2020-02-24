@@ -75,7 +75,7 @@ io.on('connection', socket => {
   console.log('socket id: ', socket.id)
   setInterval(() => {
     io.sockets.emit('intervalMessage', Date.now());
-  })
+  }, 1000)
   // socket.on('message', function (data) {
   //     console.log('message ', data);
   //     // socket.join('chatMessageRoom')
