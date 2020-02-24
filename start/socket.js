@@ -77,7 +77,7 @@ io.on('connection', socket => {
   //     // socket.join('chatMessageRoom')
   //     // console.log('joined  room', io.sockets);
   //   });
-  socket.on('sendMessage', function (data) {
+  io.on('sendMessage', function (data) {
     console.log('message ', data);
     // console.log('existing room', io.sockets);
     io.sockets.emit('receiveMessage', data);
