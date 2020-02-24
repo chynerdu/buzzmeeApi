@@ -77,7 +77,7 @@ var options = {
   httpCompression: true,
   origins: '*:*'
 };
-const io = require('socket.io')({transports:'websocket', 'origins' : '*:*'});
+const io = require('socket.io')(options);
 // io.set('transports', ['websocket']);
 console.log('starting new server')
 io.on('connection', socket => {
