@@ -10,7 +10,12 @@ class ChatController {
 
   onMessage (message) {
     console.log('Onmessage chat ', message)
-    this.socket.broadcastToAll('message', message)
+    this.socket.broadcastToAll('message', 'new connection')
+  }
+
+  OnMessage(sendMessage) {
+    console.log('send message', sendMessage) 
+    this.socket.broadcastToAll('receiveMessage', 'new connection')
   }
   // onClose() {
   //   console.log('Closing subscription for room topic')
